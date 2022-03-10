@@ -13,11 +13,6 @@ from flask import Flask, request, render_template
 app = Flask(__name__)
 
 
-# In[3]:
-
-
-get_ipython().system('pip install textblob')
-
 
 # In[4]:
 
@@ -26,7 +21,7 @@ get_ipython().system('pip install textblob')
 
 from textblob import TextBlob
 
-@app.route("/", methods=['Get', 'POST'])
+@app.route("/", methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         t = request.form.get("text")
@@ -42,10 +37,5 @@ def index():
 
 if __name__ == '__main__':
     app.run(host = "127.0.0.1", port = int("5000"))
-
-
-# In[ ]:
-
-
 
 
